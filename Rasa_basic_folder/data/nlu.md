@@ -102,3 +102,12 @@
 
 ## regex:pincode
 - [0-9]{6}
+
+## regex:email
+- ^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+).([a-zA-Z]{2,5})$
+
+## lookup:location
+- data/cities.txt
+
+## lookup:cuisine
+- data/cuisines.txt
