@@ -9,7 +9,6 @@
 * restaurant_search{"cuisine": "chinese"}
     - slot{"cuisine": "chinese"}
     - action_search_restaurants
-    - slot{"location": "delhi"}
     - utter_goodbye
     - export
 

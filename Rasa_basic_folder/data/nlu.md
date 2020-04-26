@@ -11,7 +11,6 @@
 - great choice
 - sounds really good
 - thanks
-- thanks
 
 ## intent:goodbye
 - bye
@@ -32,9 +31,6 @@
 - good morning
 - good evening
 - dear sir
-- hi
-- hi
-- hello
 
 ## intent:restaurant_search
 - i'm looking for a place to eat
@@ -66,10 +62,7 @@
 - please help me to find restaurants in [pune](location)
 - Please find me a restaurantin [bangalore](location)
 - [mumbai](location)
-- [Chinese](cuisine:chinese)
 - show me restaurants
-- [mumbai](location)
-- [Italian](cuisine)
 - please find me [chinese](cuisine) restaurant in [delhi](location)
 - can you find me a [chinese](cuisine) restaurant
 - [delhi](location)
@@ -97,8 +90,14 @@
 - veggie
 - vegg
 
+## regex:email
+- ^[A-z0-9]+[A-z0-9._-]*@[A-z0-9._-]+\.com$
+
 ## regex:greet
 - hey[^\s]*
 
 ## regex:pincode
 - [0-9]{6}
+
+## lookup:locations.txt
+  data/locations.txt

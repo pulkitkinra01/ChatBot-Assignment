@@ -12,7 +12,7 @@ class ActionSearchRestaurants(Action):
 		return 'action_search_restaurants'
 		
 	def run(self, dispatcher, tracker, domain):
-		config={ "user_key":"f4924dc9ad672ee8c4f8c84743301af5"}
+		config={ "user_key":"6729d1e80f05377cf88f974a4a148fb0"}
 		zomato = zomatopy.initialize_app(config)
 		loc = tracker.get_slot('location')
 		cuisine = tracker.get_slot('cuisine')
@@ -28,8 +28,11 @@ class ActionSearchRestaurants(Action):
 			response= "no results"
 		else:
 			for restaurant in d['restaurants']:
-				response=response+ "Found "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+"\n"
+				res_name =  restaurant['restaurant']['name']
+				res_loc  =  restaurant['restaurant']['location']['address']
+				res_rating =restaurant['restaurant']['user_rating']['aggregate_rating']
+				response=response+ "Found "+ res_name + " in "+ res_loc +" has been rated as "+ res_rating + "(out of 5)\n" 
 		
-		dispatcher.utter_message("-----"+response)
+		dispatcher.utter_message("-----\n"+response)
 		return [SlotSet('location',loc)]
 
