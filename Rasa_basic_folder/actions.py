@@ -21,17 +21,43 @@ class ActionSearchRestaurants(Action):
 		lat=d1["location_suggestions"][0]["latitude"]
 		lon=d1["location_suggestions"][0]["longitude"]
 		cuisines_dict={'bakery':5,'chinese':25,'cafe':30,'italian':55,'biryani':7,'north indian':50,'south indian':85}
-		results=zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)), 5)
-		d = json.loads(results)
-		response=""
-		if d['results_found'] == 0:
-			response= "no results"
+		
+		# Changing logic to fetch range of max 100 records
+		start=0
+		count=1
+		d=[]
+
+		while( len(d)<100 and len(d)<count ):
+			res = zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)), 20, start)
+			res = json.loads(res)
+			d.extend(res['restaurants'])
+			start = res['results_shown']
+			count = res['results_found']
+
+		# print(results)
+		# d = json.loads(results)
+
+		# Filter records for price range
+		# d = [data for data in d if data['restaurant']['price_range']==2]
+
+		if len(d) == 0:
+			response= "no returants found"
 		else:
-			for restaurant in d['restaurants']:
+			response=""
+			for restaurant in d:
 				res_name =  restaurant['restaurant']['name']
 				res_loc  =  restaurant['restaurant']['location']['address']
-				res_rating =restaurant['restaurant']['user_rating']['aggregate_rating']
-				response=response+ "Found "+ res_name + " in "+ res_loc +" has been rated as "+ res_rating + "(out of 5)\n" 
+				res_rating = str(restaurant['restaurant']['user_rating']['aggregate_rating'])
+				response = response + "Found "+ res_name + " in "+ res_loc +" has been rated as "+ res_rating + "(out of 5)\n" 
+
+		# if d['results_found'] == 0:
+		# 	response= "no returants found"
+		# else:
+		# 	for restaurant in d['restaurants']:
+		# 		res_name =  restaurant['restaurant']['name']
+		# 		res_loc  =  restaurant['restaurant']['location']['address']
+		# 		res_rating =str(restaurant['restaurant']['user_rating']['aggregate_rating'])
+		# 		response=response+ "Found "+ res_name + " in "+ res_loc +" has been rated as "+ res_rating + "(out of 5)\n" 
 		
 		dispatcher.utter_message("-----\n"+response)
 		return [SlotSet('location',loc)]
