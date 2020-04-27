@@ -82,13 +82,14 @@
 - [American](cuisine)
 - [Bhopal](location)
 - [bengaluru](location)
-- [Italian](cuisine)
+- [bengaluru](location:Bangalore)
+- [American](cuisine)
 
 ## intent:get_email
 - yes. Please send it to [ahbcdj@dkj.com](email)
 - [raju@race.com](email)
 - yes please send at [abc@xyz.com](email)
-- sharat.chilaka@gmail.com
+- [sharat.chilaka@gmail.com](email)
 
 ## intent:price_range
 - [Mid](price)
@@ -108,25 +109,25 @@
 ## synonym:4
 - four
 
-## synonym:Delhi
-- New Delhi
-- delhi
-
 ## synonym:Bangalore
 - Bengaluru
 - bengaluru
-
-## synonym:Mumbai
-- Bombay
-- bombay
 
 ## synonym:Chennai
 - Madras
 - madras
 
+## synonym:Delhi
+- New Delhi
+- delhi
+
 ## synonym:Hyderabad
 - Secunderabad
 - secunderabad
+
+## synonym:Mumbai
+- Bombay
+- bombay
 
 ## synonym:chinese
 - chines

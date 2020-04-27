@@ -181,3 +181,27 @@
     - action_send_email
     - slot{"location":"Delhi"}
     - utter_goodbye
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "Bangalore"}
+    - slot{"location": "Bangalore"}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_price
+* price_range{"price": "Mid"}
+    - slot{"price": "Mid"}
+    - action_search_restaurants
+    - slot{"location": "Bangalore"}
+    - utter_email_confirmation
+* get_email{"email": "sharat.chilaka@gmail.com"}
+    - slot{"email": "sharat.chilaka@gmail.com"}
+    - action_send_email
+    - slot{"location": "Bangalore"}
+* affirm
+    - utter_goodbye
+    - action_restart

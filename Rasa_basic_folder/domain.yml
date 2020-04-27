@@ -8,10 +8,10 @@ actions:
 - utter_ask_price
 - utter_default
 - utter_email_confirmation
+- utter_email_sent
 - utter_goodbye
 - utter_greet
 - utter_wrong_location
-- utter_email_sent
 entities:
 - cuisine
 - email
@@ -19,11 +19,11 @@ entities:
 - people
 - price
 intents:
-- price_range
 - greet
+- price_range
+- affirm
 - get_email
 - restaurant_search
-- affirm
 - goodbye
 - stop
 - thankyou
@@ -62,6 +62,9 @@ responses:
   - text: i cannot understand
   utter_email_confirmation:
   - text: Should I send you details of all the restaurants on email?
+  utter_email_sent:
+  - text: Sent
+  - text: Sent. Bon Appetit!
   utter_goodbye:
   - text: goodbye :(
   - text: Bye-bye
@@ -71,9 +74,6 @@ responses:
   - text: Hey, How is it going. How May I help you Today
   utter_wrong_location:
   - text: Service not available at current location? Please choose another location
-  utter_email_sent:
-  - text: Sent
-  - text: Sent. Bon Appetit!
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 0
