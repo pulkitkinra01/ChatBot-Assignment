@@ -79,13 +79,16 @@
 - Show me some restaurants in [Mumbai](location)
 - Need food
 - [Goa](location)
-- [American](location)
+- [American](cuisine)
 - [Bhopal](location)
+- [bengaluru](location)
+- [Italian](cuisine)
 
 ## intent:get_email
 - yes. Please send it to [ahbcdj@dkj.com](email)
 - [raju@race.com](email)
 - yes please send at [abc@xyz.com](email)
+- sharat.chilaka@gmail.com
 
 ## intent:price_range
 - [Mid](price)
@@ -94,20 +97,44 @@
 - [High](price)
 - [Low](price)
 - show me some [expensive](price:high) resturants
+- [Mid](price)
+
+## intent:thankyou
+- no. thanks
+- thanks
+- thank you!
+- Thank you!
 
 ## synonym:4
 - four
 
 ## synonym:Delhi
 - New Delhi
+- delhi
 
-## synonym:bangalore
+## synonym:Bangalore
 - Bengaluru
+- bengaluru
+
+## synoynm:Mumbai
+- Bombay
+- bombay
+
+## synonym:Chennai
+- Madras
+- madras
+
+## synoym:Hyderabad
+- Secunderabad
+- secunderabad
 
 ## synonym:chinese
 - chines
 - Chinese
 - Chines
+
+## synonym:high
+- expensive
 
 ## synonym:mid
 - moderate
@@ -125,5 +152,13 @@
 ## regex:pincode
 - [0-9]{6}
 
-## lookup:locations.txt
-data/locations.txt
+## lookup:locations
+  data/cities.txt
+
+## lookup:cuisines
+- Chinese
+- Mexican
+- Italian
+- American
+- South Indian
+- North Indian
