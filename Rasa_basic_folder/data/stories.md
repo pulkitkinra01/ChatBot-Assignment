@@ -160,3 +160,24 @@
     - slot{"location":"Bhopal"}
     - utter_email_confirmation
 * affirm
+
+## New Story
+
+* greet
+    - utter_greet
+* restaurant_search{"location":"Delhi"}
+    - slot{"location":"Delhi"}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine":"Italian"}
+    - slot{"cuisine":"Italian"}
+    - utter_ask_price
+* price_range{"price":"High"}
+    - slot{"price":"High"}
+    - action_search_restaurants
+    - slot{"location":"Delhi"}
+    - utter_email_confirmation
+* get_email{"email":"pulkitkinra01@gmail.com"}
+    - slot{"email":"pulkitkinra01@gmail.com"}
+    - action_send_email
+    - slot{"location":"Delhi"}
+    - utter_goodbye
