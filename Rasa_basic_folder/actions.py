@@ -10,6 +10,10 @@ from flask import Flask
 from flask_mail import Mail, Message
 import os
 
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 class ActionSearchRestaurants(Action):
 	def name(self):
 		return 'action_search_restaurants'
@@ -139,5 +143,31 @@ class ActionSendEmail( Action ):
 							body="Please find the top 10 resturants: \n" + response)
 				mail.send(msg)
 		
+		# USING SMTP, this works but timeout error comes, hence commented
+
+		# mail_content = "Please find the top 10 resturants: \n" + response
+		# #The mail addresses and password
+		# sender_address = 'sharat1311@gmail.com'
+		# sender_pass = 'Sh@r@tkum@r'
+		# receiver_address = 'sharat.chilaka@gmail.com'
+		# #Setup the MIME
+		# message = MIMEMultipart()
+		# message['From'] = sender_address
+		# message['To'] = receiver_address
+		# message['Subject'] = 'Hey Foodie! List of restaurants you requested'   #The subject line
+		# #The body and the attachments for the mail
+		# message.attach(MIMEText(mail_content, 'plain'))
+		# #Create SMTP session for sending the mail
+		# session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+		# session.starttls() #enable security
+		# session.login(sender_address, sender_pass) #login with mail_id and password
+		# text = message.as_string()
+		# session.sendmail(sender_address, receiver_address, text)
+		# session.quit()
+
 		dispatcher.utter_message("Mail sent")
 		return [SlotSet('location',loc)]
+		
+
+		
+		
