@@ -1,130 +1,162 @@
-## complete path
+## New Story
+
 * greet
     - utter_greet
 * restaurant_search
     - utter_ask_location
-* restaurant_search{"location": "delhi"}
-    - slot{"location": "delhi"}
+* restaurant_search{"location":"Goa"}
+    - slot{"location":"Goa"}
+    - slot{"location":"Goa"}
     - utter_ask_cuisine
-* restaurant_search{"cuisine": "chinese"}
-    - slot{"cuisine": "chinese"}
+* restaurant_search{"cuisine":"chinese"}
+    - slot{"cuisine":"chinese"}
+    - slot{"cuisine":"chinese"}
+    - utter_ask_price
+* price_range{"price":"mid"}
+    - slot{"price":"mid"}
+    - slot{"location":"Goa"}
+    - slot{"cuisine":"chinese"}
     - action_search_restaurants
+    - slot{"location":"Goa"}
+    - utter_email_confirmation
+* get_email{"email":"ahbcdj@dkj.com"}
+	- slot{"email":"ahbcdj@dkj.com"}
+    - slot{"location":"Goa"}
+    - slot{"cuisine":"chinese"}
+    - action_send_email
     - utter_goodbye
-    - export
 
-## location specified
+## New Story
+
 * greet
     - utter_greet
-* restaurant_search{"location": "delhi"}
-    - slot{"location": "delhi"}
+* restaurant_search{"location":"kolkata"}
+    - slot{"location":"kolkata"}
+    - slot{"location":"kolkata"}
     - utter_ask_cuisine
-* restaurant_search{"cuisine": "chinese"}
-    - slot{"cuisine": "chinese"}
+* restaurant_search{"cuisine":"Italian"}
+    - slot{"cuisine":"Italian"}
+    - slot{"location":"kolkata"}
+    - slot{"cuisine":"Italian"}
+    - utter_ask_price
+    - slot{"location":"kolkata"}
+    - slot{"cuisine":"Italian"}
+* price_range{"price":"mid"}
+    - slot{"price":"mid"}
     - action_search_restaurants
+    - slot{"location":"kolkata"}
+    - utter_email_confirmation
 * affirm
-    - utter_goodbye
-    - export
-
-## complete path 2
-* greet
-    - utter_greet
-* restaurant_search
-    - utter_ask_location
-* restaurant_search{"location": "delhi"}
-    - slot{"location": "delhi"}
-    - utter_ask_cuisine
-* restaurant_search{"cuisine": "North Indian"}
-    - slot{"cuisine": "North Indian"}
-    - action_search_restaurants
+    - slot{"location":"kolkata"}
+    - slot{"cuisine":"Italian"}
     - utter_goodbye
 
-## complete path 3
-* greet
-    - utter_greet
-* restaurant_search
-    - utter_ask_location
-* restaurant_search{"location": "italy"}
-    - slot{"location": "italy"}
-	- utter_ask_cuisine
-* restaurant_search{"cuisine": "chinese"}
-    - slot{"cuisine": "chinese"}
-    - action_search_restaurants
-* goodbye
-    - utter_goodbye
+## New Story
 
-## complete path 4
 * greet
     - utter_greet
-* restaurant_search
-    - utter_ask_location
-* restaurant_search{"location": "delhi"}
-    - slot{"location": "delhi"}
+* restaurant_search{"location":"Goa"}
+    - slot{"location":"Goa"}
+    - slot{"location":"Goa"}
     - utter_ask_cuisine
-* restaurant_search{"cuisine": "chinese"}
-    - slot{"cuisine": "chinese"}
+* restaurant_search{"cuisine":"chinese"}
+    - slot{"cuisine":"chinese"}
+    - slot{"cuisine":"chinese"}
+    - utter_ask_price
+    - slot{"location":"Goa"}
+    - slot{"cuisine":"chinese"}
+* price_range{"price":"low"}
+    - slot{"price":"mid"}
     - action_search_restaurants
-    - slot{"location": "delhi"}
-    - export
-
-
-## interactive_story_1
-* greet
-    - utter_greet
-* restaurant_search{"location": "mumbai"}
-    - slot{"location": "mumbai"}
-    - utter_ask_cuisine
-* restaurant_search{"cuisine": "chinese"}
-    - slot{"cuisine": "chinese"}
-    - action_search_restaurants
-    - slot{"location": "mumbai"}
-* stop
-
-## interactive_story_1
-* greet
-    - utter_greet
-* restaurant_search
-    - utter_ask_location
-* restaurant_search{"location": "mumbai"}
-    - slot{"location": "mumbai"}
-    - utter_ask_cuisine
-* restaurant_search{"cuisine": "Italian"}
-    - slot{"cuisine": "Italian"}
-    - action_search_restaurants
-    - slot{"location": "mumbai"}
-
-## interactive_story_1
-* greet
-    - utter_greet
-* restaurant_search{"cuisine": "chinese", "location": "delhi"}
-    - slot{"cuisine": "chinese"}
-    - slot{"location": "delhi"}
-    - action_search_restaurants
-    - slot{"location": "delhi"}
+    - slot{"location":"Goa"}
+    - utter_email_confirmation
 * affirm
+    - slot{"location":"Goa"}
+    - slot{"cuisine":"chinese"}
     - utter_goodbye
-    
-    
-## happy_path
+
+## New Story
+
 * greet
     - utter_greet
-* restaurant_search{"cuisine": "italian", "location": "mumbai"}
-    - slot{"cuisine": "italian"}
-    - slot{"location": "mumbai"}
+* restaurant_search{"location":"Ajmer"}
+    - slot{"location":"Ajmer"}
+    - slot{"location":"Ajmer"}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine":"South Indian"}
+    - slot{"cuisine":"South Indian"}
+    - slot{"cuisine":"South Indian"}
+    - utter_ask_price
+* price_range{"price":"Mid"}
+    - slot{"price":"Mid"}
+    - slot{"price":"Mid"}
     - action_search_restaurants
-    - slot{"location": "mumbai"}
+    - slot{"location":"Ajmer"}
+    - utter_email_confirmation
 * affirm
+    - slot{"location":"Ajmer"}
+    - slot{"cuisine":"South Indian"}
+    - slot{"price":"Mid"}
+    - utter_ask_email
+    - slot{"location":"Ajmer"}
+    - slot{"cuisine":"South Indian"}
+    - slot{"price":"Mid"}
+* get_email
+    - action_send_email
     - utter_goodbye
 
+## New Story
 
-## interactive_story_1
 * greet
     - utter_greet
-* restaurant_search{"cuisine": "chinese"}
-    - slot{"cuisine": "chinese"}
+* restaurant_search{"cuisine":"chinese","location":"chandigarh"}
+    - slot{"cuisine":"chinese"}
+    - slot{"location":"chandigarh"}
+    - slot{"cuisine":"chinese"}
+    - slot{"location":"chandigarh"}
+    - utter_ask_price
+* price_range{"price":"High"}
+    - slot{"price":"High"}
+    - slot{"cuisine":"chinese"}
+    - slot{"location":"chandigarh"}
+    - slot{"price":"High"}
+    - action_search_restaurants
+    - slot{"location":"chandigarh"}
+    - utter_email_confirmation
+    - slot{"cuisine":"chinese"}
+    - slot{"location":"chandigarh"}
+    - slot{"price":"High"}
+* get_email
+    - action_send_email
+    - utter_goodbye
+
+## New Story
+
+* greet
+    - utter_greet
+* restaurant_search{"location":"Rishikesh"}
+    - slot{"location":"Rishikesh"}
+    - slot{"location":"Rishikesh"}
+    - utter_wrong_location
+    - slot{"location":"Rishikesh"}
     - utter_ask_location
-* restaurant_search{"location": "delhi"}
-    - slot{"location": "delhi"}
+    - slot{"location":"Rishikesh"}
+* restaurant_search{"location":"Bhopal"}
+    - slot{"location":"Bhopal"}
+    - slot{"location":"Bhopal"}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine":"Italian"}
+    - slot{"cuisine":"Italian"}
+    - slot{"location":"Rishikesh"}
+    - slot{"location":"Bhopal"}
+    - slot{"cuisine":"Italian"}
+    - utter_ask_price
+    - slot{"location":"Rishikesh"}
+    - slot{"location":"Bhopal"}
+    - slot{"cuisine":"Italian"}
+* price_range{"price":"Low"}
+    - slot{"price":"Low"}
     - action_search_restaurants
-    - slot{"location": "delhi"}
+    - slot{"location":"Bhopal"}
+    - utter_email_confirmation
 * affirm
-    - utter_goodbye

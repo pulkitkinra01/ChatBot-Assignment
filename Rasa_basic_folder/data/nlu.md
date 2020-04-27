@@ -31,43 +31,69 @@
 - good morning
 - good evening
 - dear sir
+- Hola
 
 ## intent:restaurant_search
+- I’m hungry. Looking out for some good restaurants
 - i'm looking for a place to eat
 - I want to grab lunch
-- I am searching for a dinner spot
-- I am looking for some restaurants in [Delhi](location).
-- I am looking for some restaurants in [Bangalore](location)
-- show me [chinese](cuisine) restaurants
-- show me [chines](cuisine:chinese) restaurants in the [New Delhi](location:Delhi)
-- show me a [mexican](cuisine) place in the [centre](location)
-- i am looking for an [indian](cuisine) spot called olaolaolaolaolaola
 - search for restaurants
-- anywhere in the [west](location)
-- I am looking for [asian fusion](cuisine) food
-- I am looking a restaurant in [294328](location)
+- show me restaurants
+- I am searching for a dinner spot
 - in [Gurgaon](location)
+- [Mumbai](location)
+- [Delhi](location)
+- Oh, sorry, in [Goa](location)
+- anywhere in [Shimmla](location)
+- I am looking for some restaurants in [Bhopal](location).
+- I am looking for some restaurants in [Jammu](location)
+- please help me to find restaurants in [pune](location)
+- Please find me a restaurantin [bangalore](location)
+- anywhere in the [Srinagar](location)
+- please find me a restaurant in [ahmedabad](location)
+- I am looking a restaurant in [294328](location)
+- Can you suggest some good restaurants in [Rishikesh](location)
+- Okay. Show me some in [Allahabad](location)
+- show me [chinese](cuisine) restaurants
+- i am looking for an [indian](cuisine) spot called olaolaolaolaolaola
+- I am looking for [asian fusion](cuisine) food
+- can you find me a [chinese](cuisine) restaurant
 - [South Indian](cuisine)
 - [North Indian](cuisine)
 - [Italian](cuisine)
-- [Chinese](cuisine:chinese)
+- [Chinese](cuisine)
 - [chinese](cuisine)
-- [Lithuania](location)
-- Oh, sorry, in [Italy](location)
-- in [delhi](location)
-- I am looking for some restaurants in [Mumbai](location)
 - I am looking for [mexican indian fusion](cuisine)
-- can you book a table in [rome](location) in a [moderate](price:mid) price range with [british](cuisine) food for [four](people:4) people
-- [central](location) [indian](cuisine) restaurant
-- please help me to find restaurants in [pune](location)
-- Please find me a restaurantin [bangalore](location)
-- [mumbai](location)
-- show me restaurants
+- I’ll prefer [Italian](cuisine)
+- show me [chines](cuisine:chinese) restaurants in the [New Delhi](location:Delhi)
+- show me a [mexican](cuisine) place in the [centre](location)
+- [Vellore](location) [indian](cuisine) restaurant
 - please find me [chinese](cuisine) restaurant in [delhi](location)
-- can you find me a [chinese](cuisine) restaurant
-- [delhi](location)
-- please find me a restaurant in [ahmedabad](location)
 - please show me a few [italian](cuisine) restaurants in [bangalore](location)
+- can you book a table in [rome](location) in a [moderate](price:mid) price range with [british](cuisine) food for [four](people:4) people
+- need food
+- show me restaurants in [Shimla](location)
+- show me restaurants in [Mumbai](location)
+- show me restaurants in [shimla](location)
+- show me some restaurants in [Mumbai](location)
+- Show me some restaurants in [Mumbai](location)
+- Need food
+- [Goa](location)
+- [American](location)
+- [Bhopal](location)
+
+## intent:get_email
+- yes. Please send it to [ahbcdj@dkj.com](email)
+- [raju@race.com](email)
+- yes please send at [abc@xyz.com](email)
+
+## intent:price_range
+- [Mid](price)
+- [mid](price)
+- [cheap](price)
+- [High](price)
+- [Low](price)
+- show me some [expensive](price:high) resturants
 
 ## synonym:4
 - four
@@ -91,7 +117,7 @@
 - vegg
 
 ## regex:email
-- ^[A-z0-9]+[A-z0-9._-]*@[A-z0-9._-]+\.com$
+- ^[A-z0-9]+[A-z0-9._-]*@[A-z0-9._-]+\.[a-z]{2,}$
 
 ## regex:greet
 - hey[^\s]*
@@ -100,4 +126,4 @@
 - [0-9]{6}
 
 ## lookup:locations.txt
-  data/locations.txt
+data/locations.txt
