@@ -116,7 +116,7 @@
 - Bengaluru
 - bengaluru
 
-## synoynm:Mumbai
+## synonym:Mumbai
 - Bombay
 - bombay
 
@@ -124,7 +124,7 @@
 - Madras
 - madras
 
-## synoym:Hyderabad
+## synonym:Hyderabad
 - Secunderabad
 - secunderabad
 
@@ -152,10 +152,10 @@
 ## regex:pincode
 - [0-9]{6}
 
-## lookup:locations
+## lookup:location
   data/cities.txt
 
-## lookup:cuisines
+## lookup:cuisine
 - Chinese
 - Mexican
 - Italian
